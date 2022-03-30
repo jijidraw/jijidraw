@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier page{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+        <h1>Modifier Pages Little Universe</h1>
+        
+        {{ include('admin/lupages/_form.html.twig', {'button_label': 'mettre à jour'}) }}
+        
+        <a href="{{ path('lupages_index') }}">retour à la liste</a>
+        
+        {{ include('admin/lupages/_delete_form.html.twig') }}
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/images.js')}}"></script>
+{% endblock %}

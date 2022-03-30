@@ -1,0 +1,35 @@
+.comments-bloc {
+    background-color: $grey2;
+    color: $txt-bg-dark;
+    padding: 20px;
+}
+.comments-bloc  {
+    text-align: left;
+}
+.comments-title h3 h4 {
+    text-align: left;
+}
+.comments-add {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: $grey1;
+    border-radius: 5px;
+    border: 2px solid $purples1;
+}
+.comments-answer {
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+    background-color: $grey1;
+    border-radius: 5px;
+    border: 2px solid $purples1;
+}
+
+.comments-answer-info {
+    font-size: 0.8em;
+}
+.comments-answer-content {
+    font-size: 1em;
+}

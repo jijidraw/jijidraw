@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Me contacter{% endblock %}
+
+{% block body %}
+<section>
+    <h1>Contact</h1>
+    <p>Si vous souhaitez me contacter pour échanger : une idée d'histoire à mettre en image, réaliser une illustration pour un ouvrage ou un événement par exemple. Complétez simplement le formulaire ci dessous et je vous répondrez dans les plus bref délais. Au plaisir de vous lire à bientôt.</p>
+    <div class="form-section">
+        {{form_start(form)}}
+        
+            <p class="form-label">Votre email</p>
+            {{form_row(form.email, {'attr':{
+                'placeholder': 'Votre adresse email',
+            }})}}
+            
+            
+            <p class="form-label">Sujet de votre message</p>
+            {{form_row(form.subject, {'attr':{
+                'placeholder': 'Le sujet de votre message',
+            }})}}
+            
+            <p class="form-label">Votre message</p>
+            {{form_row(form.message, {'attr':{
+                'placeholder': 'Votre message',
+            }})}}
+            
+            {{form_row(form.envoyer, {'attr':{'class':'btg'}})}}
+
+            {{form_end(form)}}
+        </div>
+</section>
+{% endblock %}

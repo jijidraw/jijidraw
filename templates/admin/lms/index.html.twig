@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lovely Monster Histoire{% endblock %}
+
+{% block body %}
+<section>
+    <div class="link-ad-section">
+        <a class="btb" href="{{ path('admin') }}">retour</a>
+        <a class="btg" href="{{ path('lms_new') }}">Créer nouvelle histoire</a>
+    </div>
+    <h1>Lovely Monster Histoire</h1>
+    <div class="form-ad-section">
+        
+            {% for chapter in l_ms %}
+                <div class="card-admin">
+                    <div class="card-ad-img">
+                        {% if chapter.images is empty %}
+                        <img src="{{ asset('/image/lovelymonster.png')}}" width="200px" alt="">
+                        {% else %}
+                        <img src="{{ asset('uploads/' ~ chapter.images[0]. name)}}" width="200px" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="card-ad-title">
+                        {{ chapter.name }}
+                    </div>
+                    <div class="card-ad-link">
+                        <p>
+                            <input type="checkbox" {{ (chapter.isValid) ? 'checked' : ''}} data-id="{{chapter.id}}">
+                            Mettre le chapitre en ligne
+                        </p>
+                        <a class="btb" href="{{ path('lms_edit', {'id': chapter.id}) }}">modifier</a>
+                        <a href="{{ path('LMAdminShow', {slug: chapter.slug})}}">Voir les pages du chapitres</a>
+                    </div>
+                </div>
+                {% else %}
+            <p>Pas encore de contenu</p>
+            {% endfor %}
+        
+</div>
+</section>
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/activelm.js')}}"></script>
+{% endblock %}
+

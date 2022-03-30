@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion du Portfolio{% endblock %}
+
+{% block body %}
+<section>
+    <div class="link-ad-section">
+        <a href="{{ path('admin') }}" class="btb">retour</a>
+        <a class="btg" href="{{ path('portfolio_new') }}">Nouvelle image</a>
+    </div>
+    <h1>Gestion du Portfolio</h1>
+    <div class="form-ad-section">
+
+
+            
+                {% for portfolio in portfolios %}
+                    <div class="card-admin">
+                        <div class="card-ad-img"><img src="{{ asset('uploads/' ~ portfolio.images[0]. name)}}" width="200px" alt=""></div>
+                        <div class="card-ad-title">
+                            {{ portfolio.title }}
+                        </div>
+                        <div class="card-ad-link">
+                            <a class="btg" href="{{ path('portfolio_edit', {'id': portfolio.id}) }}">modifier</a>
+                        </div>
+                    </div>
+                    {% else %}
+            <p>Pas encore de contenu</p>
+                {% endfor %}
+
+    </div>
+</section>
+{% endblock %}

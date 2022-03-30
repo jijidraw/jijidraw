@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Little Universe{% endblock %}
+
+{% block body %}
+<section>
+    <div class="col-bloc">
+        <div class="col-a">
+
+        
+        <div class="edito">
+            <div class="edito-img">
+                <img src="{{ asset('/image/groupe.jpg')}}" alt="">
+            </div>
+            <div class="edito-content">
+                <div class="edito-title">
+                    <h1>Little Universe</h1>
+                </div>
+                <div class="edito-synopsis">
+                    <p>Dans un univers étranges ou les planêtes sont comme des îles, flottant le long d'un soleil tel un serpent s'étendant à l'infini dans l'obscurité de l'espace.<br>Un frère et une soeur du nom de Zack et Krystal viennent d'être libérés d'un laboratoire expérimental. Leur sauveur, une équipe de révolutionnaire: Capitaine John un doux réveur toujours prêt à rire de tout ne supportant pas l'injustice. Benton le petit génie qui sait tout sur tout. Ainsi que Soya une jeune femme associale et voleuse à ses heures perdues.<br>Zack et Krystal n'ont plus qu'une idée en tête: rentrer chez eux...
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+<div class="chapter-perso-section">
+
+    <div class="bd-title"><h2>Liste des chapitres</h2></div>
+    <div class="chapter-section">
+        <div class="chapter-list">
+            {% for chapter in lu %}
+            <a href="{{ path('LUShow', {slug: chapter.slug})}}">
+            <div class="chapter-bloc hvr-chapter">
+                <div class="chapter-img">
+                    {% if chapter.images is empty %}
+                    <img src="{{ asset('/image/lovelymonster.png')}}" height="200px" alt="">
+                    {% else %}
+                    <img src="{{ asset('uploads/' ~ chapter.images[0]. name)}}" width="400px" alt="">
+                    {% endif %}
+                </div>
+                <div class="chapter-content">
+                    <div class="chapter-title">
+                        <h3>{{chapter.name}}</h3>
+                    </div>
+                    <div class="chapter-content-info">
+                        <h4>Chapitre : {{chapter.numbers}}</h4>
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% else %}
+            <p>Pas encore de contenu</p>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+    </div>
+    <div class="col-b">
+
+    
+    <div class="perso-section">
+
+        <div class="perso-list">
+            <div class="perso-title"><h2>Les personnages</h2></div>
+            <a href="{{ path('LUChara')}}">
+            {% for perso in chara %}
+            <div class="perso-bloc hvr-chapter">
+                <div class="perso-img">
+                    {% if perso.images is empty %}
+                    <img src="{{ asset('/image/lovelymonster.png')}}" height="200px" alt="">
+                    {% else %}
+                    <img src="{{ asset('uploads/' ~ perso.images[0]. name)}}" width="400px" alt="">
+                    {% endif %}
+                </div>
+                <div class="perso-content">
+                    <div class="perso-title">
+                        <h3>{{perso.name}}</h3>
+                    </div>
+                    <div class="perso-content-info">
+                        <ul>
+                            <li>{{perso.age}}</li>
+                            <li>{{perso.height}}</li>
+                            <li>{{perso.weight}}</li>
+                            <li>{{perso.description}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <p>Pas encore de contenu</p>
+            {% endfor %}
+        </a>
+        </div>
+    </div>
+</div>
+</div>
+    
+</div>
+</section>
+{% endblock %}

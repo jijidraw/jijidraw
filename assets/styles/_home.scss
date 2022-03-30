@@ -1,0 +1,93 @@
+.main-pres {
+    width: 100%;
+    @extend %flex-row;
+}
+.main-img {
+    width: 50%;
+}
+.main-img img {
+    width: 100%;
+}
+.main-text {
+    background-color: $grey1;
+    width: 50%;
+    padding: 20px;
+    @extend %flex-column;
+}
+
+.home-pres {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    height: 50vh;
+}
+
+.panel1 { background-image:url(../images/groupe.jpg); filter: grayscale(0); }
+.panel2 { background-image:url(../images/lm.jpg); }
+.panel3 { background-image:url(../images/portfolio.jpg); }
+.home-hvr {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 33%;
+    height: 100%;
+    margin: 5%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    transition: all 1s ease-out;
+}
+.home-hvr a {
+    margin-top: 10px;
+}
+.home-hvr:hover .content-hvr {
+    opacity: 100;
+}
+.content-hvr img {
+    @extend %flex-center;
+    height: 60px;
+    width: auto;
+    margin-bottom: 50%;
+}
+
+
+.content-hvr {
+    position: absolute;
+    @extend %flex-column;
+    width: 100%;
+    padding: 20px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.301);
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 1024px) {
+    .main-pres, .home-pres {
+        width: 100%;
+        height: auto;
+    }
+    .main-pres, .home-pres {
+        flex-direction: column;
+        width: 100%;
+    }
+    .home-hvr {
+        width: 100%;
+        height: 100vh;
+        margin: 20px 0px;
+    }
+    .home-hvr img {
+        height: 30px;
+        margin: 10px;
+    }
+    .main-text {
+        padding: 5px;
+    }
+    .main-img {
+        width: 100%;
+    }
+    .main-img img {
+        width: 100%;
+    }
+}

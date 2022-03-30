@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des chapitres{% endblock %}
+
+{% block body %}
+<section>
+    <div class="link-ad-section">
+        <a class="btb" href="{{ path('admin') }}">retour</a>
+        <a class="btg" href="{{ path('luc_new') }}">Nouveaux chapitre</a>
+    </div>
+
+    <h1>Little Universe les chapitres</h1>
+    <div class="form-ad-section">
+            {% for chapter in l_u_cs %}
+                <div class="card-admin">
+                    <div class="card-ad-img">
+                        {% if chapter.images is empty %}
+                        <img src="{{ asset('/image/lu.png')}}" width="200px" alt="">
+                        {% else %}
+                        <img src="{{ asset('uploads/' ~ chapter.images[0]. name)}}" width="200px" alt="">
+                        {% endif %}
+                    </div>
+                    <div class="card-ad-title">
+                        {{ chapter.name }}
+                    </div>
+                    <div class="card-ad-link">
+                        <p>
+                            <input type="checkbox" {{ (chapter.isValid) ? 'checked' : ''}} data-id="{{chapter.id}}">
+                            Mettre le chapitre en ligne
+                        </p>
+                        <a class="btb" href="{{ path('luc_edit', {'id': chapter.id}) }}">modifier</a>
+                        <a href="{{ path('LUAdminShow', {slug: chapter.slug})}}">Voir les pages du chapitres</a>
+                    </div>
+                </div>
+                {% else %}
+            <p>Pas encore de contenu</p>
+            {% endfor %}
+
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/activelu.js')}}"></script>
+{% endblock %}

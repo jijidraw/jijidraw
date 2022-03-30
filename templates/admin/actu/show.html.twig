@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actu{% endblock %}
+
+{% block body %}
+    <h1>Actu</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ actu.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ actu.title }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ actu.content }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ actu.createdAt ? actu.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ actu.updatedAt ? actu.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Is_active</th>
+                <td>{{ actu.isActive ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_actu_index') }}">back to list</a>
+
+    <a href="{{ path('admin_actu_edit', {'id': actu.id}) }}">edit</a>
+
+    {{ include('admin/actu/_delete_form.html.twig') }}
+{% endblock %}

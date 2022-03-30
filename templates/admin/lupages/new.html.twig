@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle page{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+        <h1>Créer une nouvelle page de Little Universe</h1>
+        
+        {{ include('admin/lupages/_form.html.twig') }}
+        
+        <a class="btb" href="{{ path('lupages_index') }}">retour à la liste</a>
+    </div>
+</section>
+{% endblock %}

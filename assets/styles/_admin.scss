@@ -1,0 +1,77 @@
+.form-ad-section {
+    @extend %flex-center;
+    width: 100%;
+    height: fit-content;
+    background-color: $grey2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.link-ad-section {
+    @extend %flex-center;
+    width: 100%;
+}
+.ad-bloc {
+    background-color: $grey2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 20px auto;
+    -webkit-box-shadow: 0px 0px 15px 5px $purples2; 
+box-shadow: 0px 0px 15px 5px $purples2;
+
+}
+
+
+.ad-bloc ul li {
+    
+    list-style: none;
+    display: inline;
+}
+.ad-bloc li {
+    margin: 20px;
+    
+}
+.dashboard-section {
+    display: flex;
+    flex-direction: column;
+}
+.card-dashboard {
+    display: flex;
+    flex-direction: column;
+}
+.card-dashboard img {
+    height: 200px;
+    width: 200px;
+}
+.card-admin {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.card-ad-img  img{
+    float: left;
+    width: 100%;
+}
+.card-admin-view {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    
+}
+.card-ad-img-view  img{
+    height: 400px;
+    width: auto;
+}
+.card-ad-title {
+    font-size: 1.5em;
+    color: $red1;
+    bottom: 0;
+    background-color: $purples1;
+}

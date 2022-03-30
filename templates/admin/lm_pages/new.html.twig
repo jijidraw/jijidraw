@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lovely Monster pages{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+        <a class="btg" href="{{ path('admin') }}">retour</a>
+        <h1>Créer une nouvelle page de Lovely Monster</h1>
+        
+        {{ include('admin/lm_pages/_form.html.twig') }}
+        
+        <a class="btb" href="{{ path('lmpages_index') }}">retour à la liste</a>
+    </div>
+</section>
+
+{% endblock %}

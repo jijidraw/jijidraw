@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+
+        <h1>Modifier histoire</h1>
+        
+        {{ include('admin/lms/_form.html.twig', {'button_label': 'Update'}) }}
+        
+        <a class="btg" href="{{ path('lms_index') }}">retour à la liste</a>
+        
+        {{ include('admin/lms/_delete_form.html.twig') }}
+    </div>
+
+    
+    
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/images.js')}}"></script>
+
+{% endblock %}

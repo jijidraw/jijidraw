@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Page de Lovely Monster{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+            <a class="btg" href="{{ path('admin') }}">retour</a>
+        <h1>Modifier pages</h1>
+        
+        {{ include('admin/lm_pages/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+        
+        <a class="bty" href="{{ path('lmpages_index') }}">Retour à la liste</a>
+        
+        {{ include('admin/lm_pages/_delete_form.html.twig') }}
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/images.js')}}"></script>
+{% endblock %}

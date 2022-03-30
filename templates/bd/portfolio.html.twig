@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon portfolio{% endblock %}
+
+{% block body %}
+
+<section>
+    <div class="show-section">
+        {% for img in port %}
+            <img src="{{ asset('uploads/' ~ img.images[0]. name)}}" width="400px" alt="">
+            {% else %}
+            <p>Pas encore de contenu</p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

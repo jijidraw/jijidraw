@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+<section>
+        <div class="main-pres">
+            <div class="main-img">
+                <img src="{{ asset('/image/world.jpg')}}" alt="">
+            </div>
+            <div class="main-text">
+                <h1>JIJIDRAW</h1>
+                <p>Bienvenue. Dessinateur autodidacte passionné de manga depuis tout petit et Développeur web, j'ai enfin allié mes deux passions en créant mon propre site. Je vous invite à venir découvrir mon petit univers</p>
+            </div>
+        </div>
+    <div class="home-pres">
+        <div class="home-hvr panel1">
+            <div class="content-hvr">
+                <img src="{{ asset('/image/lu.png')}}" alt="">
+                <p>Retrouvez les aventures de Zack et Krystal. Un frère et une soeur qui découvre un univers fabuleux.</p>
+                <a class="hvr-link" href="{{ path('LittleUniverse') }}">En savoir plus</a>
+            </div>
+        </div>
+        <div class="home-hvr panel2">
+            <div class="content-hvr">
+                <img src="{{ asset('/image/lovelymonster.png')}}" alt="">
+                <p>Venez découvrir les lovely monsters. Une série de mini histoires avec des monstres qui apparaissent de nulle part. Leur moralité est toute relative...</p>
+                <a class="hvr-link" href="{{ path('LovelyMonster') }}">En savoir plus</a>
+            </div>
+        </div>
+        <div class="home-hvr panel3">
+            <div class="content-hvr">
+                <img src="{{ asset('/image/jijidraw.png')}}" alt="">
+                <p>Vous trouverez ici certaines de mes créations en couleurs.</p>
+                <a class="hvr-link" href="{{ path('portfolio') }}">En savoir plus</a>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    
+
+
+
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/home.js')}}"></script>
+{% endblock %}

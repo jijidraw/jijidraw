@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace d'administration{% endblock %}
+
+{% block body %}
+<section>
+    <div class="dashboard-section">
+        <h2><img src="{{ asset('/image/lu.png')}}" height="150px" alt=""></h2>
+        <div class="ad-bloc">
+                <a class="card-dashboard" href="{{ path('luc_index') }}">Little Universe chapitre<img src="{{ asset('/icon/book.png')}}" alt=""></a>
+                <a class="card-dashboard" href="{{ path('lupages_new') }}">Créer une pages de Little Universe<img src="{{ asset('/icon/page.png')}}" alt=""></a>
+                <a class="card-dashboard" href="{{ path('admin_characters_index') }}">Créer une nouvelle fiche perso<img src="{{ asset('/icon/newsguy.png')}}" alt=""></a>
+            
+        </div>
+        <h2><img src="{{ asset('/image/lovelymonster.png')}}" alt="" height="150px"></h2>
+        <div class="ad-bloc">
+                <a class="card-dashboard" href="{{ path('lms_index') }}">Liste des histoires de Lovely Monster<img src="{{ asset('/icon/book.png')}}" alt=""></a>
+                <a class="card-dashboard" href="{{ path('lmpages_new') }}">Créer une pages de Lovely Monster<img src="{{ asset('/icon/page.png')}}" alt=""></a>
+                <a class="card-dashboard" href="{{ path('admin_monsters_index') }}">Créer une nouvelle fiche de monstre<img src="{{ asset('/icon/bear.png')}}" alt=""></a>
+        </div>
+        <h2><img src="{{ asset('/image/jijidraw.png')}}" height="150px" alt=""></h2>
+        <div class="ad-bloc">
+                <a class="card-dashboard" href="{{ path('portfolio_index') }}">Mon portfolio<img src="{{ asset('/icon/page.png')}}" alt=""></a>
+        </div>
+        <h2>Message et utilisateurs</h2>
+        <div class="ad-bloc">
+            <a class="card-dashboard" href="{{ path('admin_comments_index') }}">Supprimer les commentaires<img src="{{ asset('/icon/message.png')}}" alt=""></a>
+                <a class="card-dashboard" href="{{ path('admin_users') }}">Bannir un utilisateur<img src="{{ asset('/icon/denied.png')}}" alt=""></a>
+        </div>
+    </div>
+        
+</section>
+{% endblock %}

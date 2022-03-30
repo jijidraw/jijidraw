@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LUPages index{% endblock %}
+
+{% block body %}
+<section>
+    <div class="link-ad-section">
+        <a class="btb" href="{{ path('admin') }}">retour</a>
+        <a class="btb" href="{{ path('lupages_new') }}">Créer une nouvelle page</a>
+    </div>
+        <h1>Liste des pages</h1>
+
+        
+    </div>
+    <div class="form-ad-section">
+        {% for chapter in l_u_pages %}
+            <div class="card-admin">
+                <div class="card-ad-img">
+                    {% if chapter.images is empty %}
+                    <img src="{{ asset('/image/lu.png')}}" width="200px" alt="">
+                    {% else %}
+                    <img src="{{ asset('uploads/' ~ chapter.images[0]. name)}}" width="200px" alt="">
+                    {% endif %}
+                </div>
+                <div class="card-ad-link">
+                    <a class="btb" href="{{ path('lupages_edit', {'id': chapter.id}) }}">modifier</a>
+                </div>
+            </div>
+            {% else %}
+            <p>Pas encore de contenu</p>
+        {% endfor %}
+</div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    
+{% endblock %}

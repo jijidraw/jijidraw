@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    {% if app.request.attributes.get('_route') == 'lupages_edit' %}
+        {% for image in l_u_page.images %}
+            <div>
+                <img src="{{ asset('uploads/' ~ image.name) }}" width="150px" alt="">
+                <a href="{{ path('DeletePageLU', {id: image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id) }}">Supprimer l'image</a>
+            </div>
+            {% endfor %}
+        {% endif %}
+    <button class="btg">{{ button_label|default('enregistrer') }}</button>
+{{ form_end(form) }}

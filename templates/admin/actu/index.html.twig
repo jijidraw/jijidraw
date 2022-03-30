@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actu index{% endblock %}
+
+{% block body %}
+    <h1>Actu index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th>Is_active</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for actu in actus %}
+            <tr>
+                <td>{{ actu.id }}</td>
+                <td>{{ actu.title }}</td>
+                <td>{{ actu.content }}</td>
+                <td>{{ actu.createdAt ? actu.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ actu.updatedAt ? actu.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ actu.isActive ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('admin_actu_show', {'id': actu.id}) }}">show</a>
+                    <a href="{{ path('admin_actu_edit', {'id': actu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <p>Pas encore de contenu</p>
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_actu_new') }}">Create new</a>
+{% endblock %}

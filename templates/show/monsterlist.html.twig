@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les monstres de Lovely Monster{% endblock %}
+
+{% block body %}
+<section>
+    <h1>Les monstres de Lovely Monster</h1>
+        <div class="chara-section">
+            {% for character in chara %}
+            <div class="chara-box">
+                <div class="chara-img">
+                    <img src="{{ asset('uploads/' ~ character.images[0]. name)}}" width="300px" alt="">
+                </div>
+                <div class="chara-context">
+                    <p>
+                        A propos de :
+                    </p>
+                    <h3 class="chara-name">
+                        {{ character.name }}
+                    </h3>
+                    <ul class="chara-info">
+                        <li>
+                            Taille :{{ character.height }}
+                        </li>
+                        <li>
+                            Poids :{{ character.weight }}
+                        </li>
+                    </ul>
+                    <p>
+                        {{ character.description }}
+                    </p>
+                </div>
+            </div>
+            {% else %}
+
+            {% endfor %}
+        </div>    
+</section>
+{% endblock %}

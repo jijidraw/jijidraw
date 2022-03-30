@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des pages de Lovely Monster{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+        <a class="btg" href="{{ path('admin') }}">retour</a>
+
+        <h1>Pages de Lovely Monster</h1>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th>Histoire</th>
+                    <th>Numéro de page</th>
+                    <th>image</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for l_m_page in l_m_pages %}
+                <tr>
+                    
+                    <td>{{ l_m_page.story }}</td>
+                    <td>{{ l_m_page.pagesNumbers }}</td>
+                    <td><img src="{{ asset('uploads/' ~ l_m_page.images[0]. name) }}" width="150px" alt=""></td> 
+                    <td>
+                        <a href="{{ path('lmpages_edit', {'id': l_m_page.id}) }}">modifier</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="3">Pas d'enregistgrement trouvé</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="btg" href="{{ path('lmpages_new') }}">Créer une nouvelle pages</a>
+    </div>
+</section>
+{% endblock %}

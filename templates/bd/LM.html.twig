@@ -1,0 +1,91 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lovely Monster{% endblock %}
+
+{% block body %}
+<section>
+    <div class="col-bloc">
+    <div class="col-a">
+        <div class="edito">
+            <div class="edito-img">
+                <img src="{{ asset('/image/lm.jpg')}}" alt="">
+            </div>
+            <div class="edito-content">
+                <div class="edito-title">
+                    <h1>Lovely Monster</h1>
+                </div>
+                <div class="edito-synopsis">
+                    <p>Retrouvez les Lovely Monsters. <br>Des monstres étranges, ils sortent de nulle part pour rendre la justice... <br> ... à leur manière. </p>
+                </div>
+            </div>
+        </div>
+<div class="chapter-perso-section">
+    <div class="chapter-section">
+        <div class="bd-title"><h2>Liste des histoires</h2></div>
+        <div class="chapter-list">
+            {% for chapter in lm %}
+            <a href="{{ path('LMShow', {slug: chapter.slug})}}">
+            <div class="chapter-bloc hvr-chapter">
+                <div class="chapter-img">
+                    {% if chapter.images is empty %}
+                    <img src="{{ asset('/image/lovelymonster.png')}}" height="200px" alt="">
+                    {% else %}
+                    <img src="{{ asset('uploads/' ~ chapter.images[0]. name)}}" width="400px" alt="">
+                    {% endif %}
+                </div>
+                <div class="chapter-content">
+                    <div class="chapter-title">
+                        <h3>{{chapter.name}}</h3>
+                    </div>
+                    <div class="chapter-content-info">
+                        <h4>Histoire : {{chapter.numbers}}</h4>
+                    </div>
+                </div>
+            </div>
+            </a>
+            {% else %}
+            <p>Pas encore de contenu</p>
+            {% endfor %}
+        </div>
+</div>
+</div>
+</div>
+<div class="col-b">
+
+    <div class="perso-section">
+        <div class="perso-list">
+            <div class="perso-title"><a href="{{ path('LMM')}}"><h2>Les monstres</h2></a></div>
+            {% for perso in chara %}
+            <a href="{{ path('LMM')}}">
+            <div class="perso-bloc hvr-chapter">
+                <div class="perso-img">
+                    {% if perso.images is empty %}
+                    <img src="{{ asset('/image/lovelymonster.png')}}" height="200px" alt="">
+                    {% else %}
+                    <img src="{{ asset('uploads/' ~ perso.images[0]. name)}}" width="400px" alt="">
+                    {% endif %}
+                </div>
+                <div class="perso-content">
+                    <div class="perso-title">
+                        <h3>{{perso.name}}</h3>
+                    </div>
+                    <div class="perso-content-info">
+                        <ul>
+                            <li>{{ perso.description }}</li>
+                            <li>{{ perso.weight }}</li>
+                            <li>{{ perso.height }}</li>
+                        </ul>                            
+                    </div>
+                </div>
+            </div>
+        </a>
+        {% else %}
+            <p>Pas encore de contenu</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

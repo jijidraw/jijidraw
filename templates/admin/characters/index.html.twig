@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des personnages{% endblock %}
+
+{% block body %}
+<section>
+    <div class="link-ad-section">
+        <a class="btb" href="{{ path('admin') }}">retour</a>
+        <a class="btg" href="{{ path('admin_characters_new') }}">Créer une nouvelle fiche</a>
+    </div>
+    <h1>Liste des personnages</h1>
+    <div class="form-ad-section">
+
+        
+        
+        {% for character in characters %}
+        <div class="card-admin">
+            <div class="card-ad-img">
+                {% if character.images is empty %}
+                <img src="{{ asset('/image/lovelymonster.png')}}" width="200px" alt="">
+                {% else %}
+                <img src="{{ asset('uploads/' ~ character.images[0]. name)}}" width="200px" alt="">
+                {% endif %}
+            </div>
+            <div class="card-ad-title">
+                {{ character.name }}
+            </div>
+            <div class="card-ad-link">
+                
+                <p>
+                    <a href="{{ path('admin_characters_edit', {'id': character.id}) }}">modifier</a>
+                    <input type="checkbox" {{ (character.IsValid) ? 'checked' : ''}} data-id="{{character.id}}">
+                    Activer
+                </p>
+            </div>
+            {% else %}
+            <p>Pas encore de contenu</p>
+            
+        
+    </div>
+        {% endfor %}
+
+    </div>
+        
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/activechara.js')}}"></script>
+{% endblock %}

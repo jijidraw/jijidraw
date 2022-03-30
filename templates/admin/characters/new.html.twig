@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau personnage{% endblock %}
+
+{% block body %}
+    <h1>Créer une nouvelle fiche de personnage</h1>
+    <div class="form-section">
+
+        
+        {{ include('admin/characters/_form.html.twig') }}
+        
+        <a class="btg" href="{{ path('admin_characters_index') }}">Retour à la liste</a>
+    </div>
+{% endblock %}

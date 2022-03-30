@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('luc_delete', {'id': l_u_c.id}) }}" onsubmit="return confirm('Voulez vous effacer ce chapitre ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ l_u_c.id) }}">
+    <button class="btr">Effacer</button>
+</form>

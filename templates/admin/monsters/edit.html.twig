@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier monstre{% endblock %}
+
+{% block body %}
+    <h1>Modifier monstre</h1>
+
+    {{ include('admin/monsters/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('admin_monsters_index') }}">Retour à la liste</a>
+
+    {{ include('admin/monsters/_delete_form.html.twig') }}
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/images.js')}}"></script>
+{% endblock %}

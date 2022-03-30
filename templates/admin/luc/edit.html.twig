@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier chapitre{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-ad-section">
+        <h1>Modifier chapitre</h1>
+        
+        {{ include('admin/luc/_form.html.twig', {'button_label': 'Update'}) }}
+        
+        <a class="btg" href="{{ path('luc_index') }}">retour à la liste</a>
+        
+        {{ include('admin/luc/_delete_form.html.twig') }}
+        
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/images.js')}}"></script>
+{% endblock %}

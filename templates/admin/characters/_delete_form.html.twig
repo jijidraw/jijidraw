@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('admin_characters_delete', {'id': character.id}) }}" onsubmit="return confirm('Est tu sur?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ character.id) }}">
+    <button class="btr">Effacer</button>
+</form>

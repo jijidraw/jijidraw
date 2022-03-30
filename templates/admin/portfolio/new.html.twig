@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle image dans le portfolio{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+        <h1>Nouvelle image</h1>
+        
+        {{ include('admin/portfolio/_form.html.twig') }}
+        
+        <a class="btb" href="{{ path('portfolio_index') }}">retour à la liste</a>
+    </div>
+</section>
+{% endblock %}

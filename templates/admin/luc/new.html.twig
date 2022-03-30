@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau chapitre{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+        <h1>Créer un nouveau chapitre</h1>
+        
+        {{ include('admin/luc/_form.html.twig') }}
+        
+        <a class="btb" href="{{ path('luc_index') }}">retour à la liste</a>
+    </div>
+</section>
+{% endblock %}

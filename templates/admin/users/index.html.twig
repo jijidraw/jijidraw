@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Supprimer des utilisateurs{% endblock %}
+
+{% block body %}
+{% for users in user %}
+    <h3>{{ users.pseudo }}</h3>
+    {% else %}
+            <p>Pas encore de contenu</p>
+{% endfor %}
+
+{% endblock %}

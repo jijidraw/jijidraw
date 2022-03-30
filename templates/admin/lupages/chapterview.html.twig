@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ chapter.slug }}{% endblock %}
+
+{% block body %}
+<section>
+    <div class="link-ad-section">
+        <a class="btb" href="{{ path('admin') }}">retour</a>
+        <a class="btb" href="{{ path('lupages_new') }}">Créer une nouvelle page</a>
+    </div>
+    <h1>Aperçu du chapitre</h1>
+<div class="form-ad-section">
+    {% for img in page %} 
+        <div class="card-admin-view">
+            <div class="card-ad-img-view">
+                {% if img.chapter.id == chapter.id %}
+                <div class="ad-view-info">
+                    <p>Pages n°: {{ img.pagesNumbers }}</p>
+                    <a class="btg" href="{{ path('lupages_edit', {'id': img.id}) }}">modifier</a>
+                </div>
+                <img src="{{ asset('uploads/' ~ img.images[0]. name)}}" width="400px" alt="">
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+            
+</div>
+</section>
+{% endblock %}

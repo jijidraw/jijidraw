@@ -1,0 +1,211 @@
+:root {
+    --colorB: #3b82f6;
+    --colorBHover: #1e40af;
+    --colorG: #22c55e;
+    --colorGHover: #166534;
+    --colorR: #ef4444;
+    --colorRHover: #991b1b;
+    --colorP: #a855f7;
+    --colorPHover: #6b21a8;
+    --colorN: #737373;
+    --colorNHover: #262626;
+    
+    
+  }
+
+
+
+/* buttonL */
+.buttonLG {
+    background-color: var(--colorG); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLG:hover {
+    background-color: var(--colorGHover); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLB {
+    background-color: var(--colorB); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLB:hover {
+    background-color: var(--colorBHover); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLR {
+    background-color: var(--colorR); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLR:hover {
+    background-color: var(--colorRHover); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLP {
+    background-color: var(--colorP); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLP:hover {
+    background-color: var(--colorPHover); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLN {
+    background-color: var(--colorN); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonLN:hover {
+    background-color: var(--colorNHover); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+/* button */
+/* buttonL */
+.buttonG {
+    background-color: var(--colorG); /* Green */
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonG:hover {
+    background-color: var(--colorGHover); /* Green */
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonB {
+    background-color: var(--colorB); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonB:hover {
+    background-color: var(--colorBHover); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonR {
+    background-color: var(--colorR); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonR:hover {
+    background-color: var(--colorRHover); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonP {
+    background-color: var(--colorP); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonP:hover {
+    background-color: var(--colorPHover); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonN {
+    background-color: var(--colorN); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+.buttonN:hover {
+    background-color: var(--colorNHover); 
+    border: none;
+    color: white;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+} 
+/* button */

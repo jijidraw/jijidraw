@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des commentaires{% endblock %}
+
+{% block body %}
+<div class="link-ad-section">
+    <a class="btb" href="{{ path('admin') }}">retour</a>
+</div>
+    <h1>Liste des commentaires</h1>
+<div class="form-section">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>Created_at</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comment in comments %}
+            <tr>
+                <td>{{ comment.id }}</td>
+                <td>{{ comment.content }}</td>
+                <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ include('admin/comments/_delete_form.html.twig') }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="4">Pas de commentaires trouvé</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

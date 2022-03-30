@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btg">{{ button_label|default('Enregistrer') }}</button>
+    {% if app.request.attributes.get('_route') == 'luc_edit' %}
+    <h3>Images</h3>
+    {% for image in l_u_c.images %}
+        <img src="{{ asset('uploads/' ~ image.name) }}" width="150px" alt="">
+        <a href="{{ path('DeleteCoverLU', {id: image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id) }}">Supprimer l'image</a>
+    {% endfor %}
+        
+    {% endif %}
+{{ form_end(form) }}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lovely Monster histoire{% endblock %}
+
+{% block body %}
+<section>
+    <div class="form-section">
+        <a class="btg" href="{{ path('admin') }}">retour</a>
+        <h1>Créer une nouvelle histoire</h1>
+        
+        {{ include('admin/lms/_form.html.twig') }}
+        
+        <a class="btb" href="{{ path('lms_index') }}">Retour à la liste</a>
+    </div>
+</section>
+{% endblock %}

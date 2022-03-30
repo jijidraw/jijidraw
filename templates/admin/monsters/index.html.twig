@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des monstres{% endblock %}
+
+{% block body %}
+<div class="section">
+    <div class="link-ad-section">
+        <a class="btb" href="{{ path('admin') }}">retour</a>
+        <a class="btg" href="{{ path('admin_monsters_new') }}">Nouveau monstre</a>
+    </div>
+    <h1>Liste des monstres</h1>
+    <div class="form-ad-section">
+        {% for monster in monsters %}
+        <div class="card-admin">
+
+            <div class="card-ad-img">
+                {% if monster.images is empty %}
+                <img src="{{ asset('/image/lovelymonster.png')}}" width="200px" alt="">
+                {% else %}
+                <img src="{{ asset('uploads/' ~ monster.images[0]. name)}}" width="200px" alt="">
+                {% endif %}
+            </div>
+        <div class="card-ad-title">
+            {{ monster.name }}
+        </div>
+        <div class="card-ad-link">
+            <p>
+                <input type="checkbox" {{ (monster.IsValid) ? 'checked' : ''}} data-id="{{monster.id}}">
+                Activer
+            </p>
+            <a href="{{ path('admin_monsters_edit', {'id': monster.id}) }}">modifier</a>
+        </div>
+    </div>
+    {% else %}
+            <p>Pas encore de contenu</p>
+                {% endfor %}
+    </div>
+</div>
+        {% endblock %}
+        {% block javascripts %}
+    <script src="{{ asset('js/activemonster.js')}}"></script>
+{% endblock %}

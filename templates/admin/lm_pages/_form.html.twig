@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+        {% if app.request.attributes.get('_route') == 'lmpages_edit' %}
+        {% for image in l_m_page.images %}
+        <h3>Images</h3>
+            <div>
+                <img src="{{ asset('uploads/' ~ image.name) }}" width="150px" alt="">
+                <a href="{{ path('DeletePageLM', {id: image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id) }}">Supprimer l'image</a>
+            </div>
+            {% endfor %}
+        {% endif %}
+    <button class="btg">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}

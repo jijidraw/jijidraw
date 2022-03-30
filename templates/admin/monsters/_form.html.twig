@@ -1,0 +1,13 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    {% if app.request.attributes.get('_route') == 'admin_monsters_edit' %}
+    {% for image in monster.images %}
+    <h3>Images</h3>
+        <div>
+            <img src="{{ asset('uploads/' ~ image.name) }}" width="150px" alt="">
+            <a href="{{ path('DeleteMonsterImage', {id: image.id})}}" data-delete data-token="{{csrf_token('delete' ~ image.id) }}">Supprimer l'image</a>
+        </div>
+        {% endfor %}
+    {% endif %}
+    <button class="btn">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}
