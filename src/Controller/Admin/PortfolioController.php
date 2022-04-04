@@ -70,6 +70,18 @@ class PortfolioController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $images = $form->get('image')->getData();
+                $fichier = md5(uniqid()) . '.' . $images->guessExtension();
+                $images->move(
+                    $this->getParameter('upload_directory'),
+                    $fichier
+                );
+                
+                $img = new Images();
+                $img->setName($fichier);
+                $portfolio->addImage($img);
+
             $entityManager->flush();
 
             return $this->redirectToRoute('portfolio_index', [], Response::HTTP_SEE_OTHER);
@@ -84,9 +96,19 @@ class PortfolioController extends AbstractController
     /**
      * @Route("/{id}", name="portfolio_delete", methods={"POST"})
      */
-    public function delete(Request $request, Images $img, Portfolio $portfolio, EntityManagerInterface $entityManager): Response
+    public function delete(Request $request, Portfolio $portfolio, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$portfolio->getId(), $request->request->get('_token'))) {
+
+            $images = $portfolio->getImages();
+            if($images){
+                foreach($images as $image){
+                    $imgName = $this->getParameter("upload_directory") . '/' . $image->getName();
+                    if(file_exists($imgName)){
+                        unlink($imgName);
+                    }
+                }
+            }
 
             $entityManager->remove($portfolio);
             $entityManager->flush();

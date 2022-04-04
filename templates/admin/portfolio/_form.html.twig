@@ -1,4 +1,11 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    {% if app.request.attributes.get('_route') == 'portfolio_edit' %}
+        {% for image in portfolio.images %}
+            <div>
+                <img src="{{ asset('uploads/' ~ image.name) }}" width="150px" alt="">
+            </div>
+            {% endfor %}
+        {% endif %}
     <button class="btg">{{ button_label|default('Enregistrer') }}</button>
 {{ form_end(form) }}

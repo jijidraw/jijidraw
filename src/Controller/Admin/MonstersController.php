@@ -31,7 +31,7 @@ class MonstersController extends AbstractController
     /**
      * @Route("/new", name="admin_monsters_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(request $request, EntityManagerInterface $entityManager): Response
     {
         $monster = new Monsters();
         $form = $this->createForm(MonstersType::class, $monster);

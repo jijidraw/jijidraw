@@ -5,7 +5,12 @@
 {% block body %}
 <section>
 
-    
+    {% for img in chapter.images %}
+    <div class="show-section">
+        <img src="{{ asset('uploads/' ~ img. name)}}" width="400px" alt="">
+    </div>
+    {% endfor %}
+
     {% for img in page %} 
         <div class="show-section">
             {% if img.chapter.id == chapter.id %}
@@ -16,6 +21,7 @@
 
 
     <div class="form-section-comment comments-bloc">
+        <a class="btg" href="{{ path('LittleUniverse') }}">Retour à la liste des chapitres</a>
 
         <div class="comments-title">
             <h3>Liste des commentaires</h3>

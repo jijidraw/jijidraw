@@ -12,8 +12,15 @@
             {% endif %}
         </div>
     {% endfor %}
-    <div class="form-section-comment comments-bloc">
 
+    {% for img in chapter.images %}
+    <div class="show-section">
+        <img src="{{ asset('uploads/' ~ img. name)}}" width="400px" alt="">
+    </div>
+    {% endfor %}
+
+    <div class="form-section-comment comments-bloc">
+        <a class="btg" href="{{ path('LovelyMonster') }}">Retour à la liste des histoires</a>
         <div class="comments-title">
             <h3>Liste des commentaires</h3>
         </div>

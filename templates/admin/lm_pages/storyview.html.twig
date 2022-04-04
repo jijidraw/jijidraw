@@ -6,7 +6,7 @@
 <section>
     <div class="link-ad-section">
         <a class="btb" href="{{ path('admin') }}">retour</a>
-        <a class="btb" href="{{ path('lupages_new') }}">Créer une nouvelle page</a>
+        <a class="btb" href="{{ path('lmpages_new') }}">Créer une nouvelle page</a>
     </div>
     <h1>Aperçu du chapitre</h1>
 <div class="form-ad-section">
@@ -16,7 +16,7 @@
                 {% if img.story.id == chapter.id %}
                 <div class="ad-view-info">
                     <p>Pages n°: {{ img.pagesNumbers }}</p>
-                    <a class="btg" href="{{ path('lupages_edit', {'id': img.id}) }}">modifier</a>
+                    <a class="btg" href="{{ path('lmpages_edit', {'id': img.id}) }}">modifier</a>
                 </div>
                 <img src="{{ asset('uploads/' ~ img.images[0]. name)}}" width="400px" alt="">
                 {% endif %}

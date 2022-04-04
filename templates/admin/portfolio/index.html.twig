@@ -21,6 +21,7 @@
                         </div>
                         <div class="card-ad-link">
                             <a class="btg" href="{{ path('portfolio_edit', {'id': portfolio.id}) }}">modifier</a>
+                            <a href="">{{ include('admin/portfolio/_delete_form.html.twig') }}</a>
                         </div>
                     </div>
                     {% else %}
